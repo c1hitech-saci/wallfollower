@@ -1,5 +1,7 @@
 # Wall Follower Robot
 
+![Wall Follower Robot](./pictures/wallfollower-c1-hitech-rnd.jpg)
+
 A wall-following robot programmed using Arduino and the AFMotor library.
 
 ## Table of Contents
