@@ -42,9 +42,9 @@ AF_DCMotor motorKanan(2);  // pin M2
  * Variable global yang digunakan untuk menyimpan data jarak sensor
  * variable ini akan berubah setiap interval waktu SENSOR_READ_INTERVAL
  */
-float jarakSensorKiri;
-float jarakSensorDepan;
-float jarakSensorKanan;
+long jarakSensorKiri;
+long jarakSensorDepan;
+long jarakSensorKanan;
 // ------------------ END: global variable ------------------
 
 // ------------------ START: inline function ------------------
@@ -52,7 +52,7 @@ inline void logikaKontrol() __attribute__((always_inline));
 #ifdef CONTROL_INTERVAL
 inline void kontrolRobot(unsigned long waktuSekarang) __attribute__((always_inline));
 #endif
-inline int ambilJarakSensor(int pinTrigger, int pinEcho) __attribute__((always_inline));
+inline long ambilJarakSensor(int pinTrigger, int pinEcho) __attribute__((always_inline));
 inline bool dekatDenganDinding(int jarakSensor) __attribute__((always_inline));
 inline bool jauhDenganDinding(int jarakSensor) __attribute__((always_inline));
 inline bool titikNetral(int jarakSensor) __attribute__((always_inline));
@@ -263,15 +263,15 @@ void loop() {
  * Fungsi untuk mengambil jarak sensor
  * @param pinTrigger pin trigger sensor
  * @param pinEcho pin echo sensor
- * @return jarak sensor dalam satuan mm
+ * @return jarak sensor dalam satuan cm
  */
-int ambilJarakSensor(int pinTrigger, int pinEcho) {
+long ambilJarakSensor(int pinTrigger, int pinEcho) {
     digitalWrite(pinTrigger, LOW);
     delayMicroseconds(2);
     digitalWrite(pinTrigger, HIGH);
     delayMicroseconds(10);
     digitalWrite(pinTrigger, LOW);
-    return (pulseIn(pinEcho, HIGH) * 0.0343 / 2);  // rumus: jarak = waktu * kecepatan suara / 2
+    return (pulseIn(pinEcho, HIGH) / 29 / 2);  // rumus: jarak = waktu / 29 / 2
 }
 
 bool dekatDenganDinding(int jarakSensor) {
