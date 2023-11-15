@@ -18,8 +18,8 @@
 
 // interval eksekusi fungsi dalam satuan milisecond
 // uncomment baris di bawah ini untuk mengaktifkan interval
-#define SENSOR_READ_INTERVAL 100
-#define CONTROL_INTERVAL 1000
+// #define SENSOR_READ_INTERVAL 100
+// #define CONTROL_INTERVAL 1000
 
 // delay dalam satuan milisecond untuk setiap aksi robot
 #define DELAY_SIKU_SIKU 1000
@@ -219,9 +219,11 @@ void setup() {
 #ifdef DEBUG
     Serial.println("Setup selesai");
     Serial.println("===================================");
-    Serial.println("Robot akan berjalan setelah 3 detik");
 #endif
 #ifdef FEEDBACK
+#ifdef DEBUG
+    Serial.println("Robot akan berjalan setelah 3 detik");
+#endif
     delay(3000);
     digitalWrite(LED_BUILTIN, LOW);
 #endif
