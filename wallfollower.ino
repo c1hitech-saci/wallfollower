@@ -12,9 +12,9 @@
 #define PIN_TRIG_SENSOR_KANAN A4
 #define PIN_ECHO_SENSOR_KANAN A5
 
-// jarak aman dengan dinding dalam satuan mm
-#define JARAK_DENGAN_DINDING 500
-#define JARAK_TOLERANSI 200
+// jarak aman dengan dinding dalam satuan cm
+#define JARAK_DENGAN_DINDING 5
+#define JARAK_TOLERANSI 2
 
 // interval eksekusi fungsi dalam satuan milisecond
 // uncomment baris di bawah ini untuk mengaktifkan interval
