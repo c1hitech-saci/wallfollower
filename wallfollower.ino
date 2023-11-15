@@ -275,11 +275,11 @@ int ambilJarakSensor(int pinTrigger, int pinEcho) {
 }
 
 bool dekatDenganDinding(int jarakSensor) {
-    return jarakSensor <= (JARAK_DENGAN_DINDING + JARAK_TOLERANSI);
+    return jarakSensor <= (JARAK_DENGAN_DINDING + JARAK_TOLERANSI) && !(jarakSensor >= (JARAK_DENGAN_DINDING - JARAK_TOLERANSI));
 }
 
 bool jauhDenganDinding(int jarakSensor) {
-    return jarakSensor >= (JARAK_DENGAN_DINDING - JARAK_TOLERANSI);
+    return jarakSensor >= (JARAK_DENGAN_DINDING - JARAK_TOLERANSI) && !(jarakSensor <= (JARAK_DENGAN_DINDING + JARAK_TOLERANSI));
 }
 
 bool titikNetral(int jarakSensor) {
