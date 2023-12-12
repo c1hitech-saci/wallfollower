@@ -11,7 +11,6 @@ A wall-following robot programmed using Arduino and the AFMotor library.
 - [Requirements](#requirements)
 - [Setup](#setup)
 - [Usage](#usage)
-- [Customization](#customization)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
@@ -42,11 +41,6 @@ This Arduino sketch implements the logic for a wall-following robot using ultras
 ## Usage
 
 Ensure that the robot is placed in an environment with walls for it to navigate. The robot will autonomously follow the walls while avoiding collisions.
-
-## Customization
-
-- Adjust the motor speed settings (`SPEED_MAX`, `SPEED_MEDIUM`, `SPEED_MIN`) based on your robot's capabilities.
-- Modify the control logic in the `logikaKontrol` function to customize the robot's behavior.
 
 ## Acknowledgements
 
